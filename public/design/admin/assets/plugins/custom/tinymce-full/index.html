@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="tinymce.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    tinymce.init({
+      selector: 'textarea#tinymce',
+
+      plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons template',
+      editimage_cors_hosts: ['picsum.photos'],
+      menubar: 'file edit view insert format tools table help',
+      toolbar: ['table | undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist ', 
+      'forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl | custom_dialog'],
+      content_css: ["custom_css_tinymce.css"],
+      font_formats:"Segoe UI=Segoe UI;",
+      fontsize_formats: "8px 9px 10px 11px 12px 14px 16px 18px 20px 22px 24px 26px 28px 30px 32px 34px 36px 38px 40px 42px 44px 46px 48px 50px 52px 54px 56px 58px 60px 62px 64px 66px 68px 70px 72px 74px 76px 78px 80px 82px 84px 86px 88px 90px 92px 94px 94px 96px",
+      height: 600,
+      setup: function (editor) {
+        editor.ui.registry.addButton('custom_dialog', {
+          text: 'اضافة خلية مدورة',
+          onAction: function() {
+                // Open a Dialog
+                editor.windowManager.open({
+                  title: 'اضافة خلية مدورة',
+                  body: {
+                    type: 'panel',
+                    items: [{
+                      type: 'selectbox',
+                      name: 'raduis',
+                      label: 'اختر نوع الاطار',
+                      items: [
+                        {text: 'مستقيم', value: '0'},
+                        {text: 'دائري', value: '25'}
+                        
+                      ],
+                      flex: true
+                    },{
+                                  type: 'colorpicker',
+                                  name: 'BG_color',
+                                  label: 'Select style',
+                                  
+                                  flex: true
+                              },{
+                                  type: 'colorpicker',
+                                  name: 'border_color',
+                                  label: 'Select style',
+                                  
+                                  flex: true
+                              }]
+                  },
+                  onSubmit: function (api) {
+                        // insert markup
+                        node = editor.selection.getNode();
+                        console.log(node);
+                        // var newElement = document.createElement("span");
+                        
+                        node.innerHTML ='<span class="none-padding" style="border-radius: '+api.getData().raduis+'px; border: 2px solid '+api.getData().border_color+';background:'+api.getData().BG_color+'">' +node.innerHTML+'</span>';
+                        // node.innerHTML=newElement, node;
+                        // editor.insertContent('Inserted custom data: <span class="color-red"><b>' + api.getData().custom_data + '</b></span> <br>and your selected style: <b>' + api.getData().selected_style) + '</b>';
+
+                        // // close the dialog
+                        api.close();
+                      },
+                      buttons: [
+                      {
+                        text: 'Close',
+                        type: 'cancel',
+                        onclick: 'close'
+                      },
+                      {
+                        text: 'Insert',
+                        type: 'submit',
+                        primary: true,
+                        enabled: true
+                      }
+                      ]
+                    });
+              }
+            });
+      },
+      toolbar_sticky: true,
+      autosave_ask_before_unload: true,
+      autosave_interval: '30s',
+      autosave_prefix: '{path}{query}-{id}-',
+      autosave_restore_when_empty: false,
+      autosave_retention: '2m',
+      image_advtab: true,
+      link_list: [
+      { title: 'My page 1', value: 'https://www.tiny.cloud' },
+      { title: 'My page 2', value: 'http://www.moxiecode.com' }
+      ],
+      image_list: [
+      { title: 'My page 1', value: 'https://www.tiny.cloud' },
+      { title: 'My page 2', value: 'http://www.moxiecode.com' }
+      ],
+      image_class_list: [
+      { title: 'None', value: '' },
+      { title: 'Some class', value: 'class-name' }
+      ],
+      importcss_append: true,
+      file_picker_callback: (callback, value, meta) => {
+       /* Provide file and text for the link dialog */
+       if (meta.filetype === 'file') {
+         callback('https://www.google.com/logos/google.jpg', { text: 'My text' });
+       }
+
+       /* Provide image and alt text for the image dialog */
+       if (meta.filetype === 'image') {
+         callback('https://www.google.com/logos/google.jpg', { alt: 'My alt text' });
+       }
+
+       /* Provide alternative source and posted for the media dialog */
+       if (meta.filetype === 'media') {
+         callback('movie.mp4', { source2: 'alt.ogg', poster: 'https://www.google.com/logos/google.jpg' });
+       }
+     },
+     templates: [
+     { title: 'New Table', description: 'creates a new table', content: "<div class='mceTmpl'><table width='98%'  border='1' cellspacing='0' style='border-radius:3px' cellpadding='0'><tr><th scope='col'> </th><th scope='col'> </th></tr><tr><td> </td><td> </td></tr></table></div>" },
+     { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
+     { title: 'New list with dates', description: 'New List with dates', content: "<div class='mceTmpl'><span class='cdate'>cdate</span><br><span class='mdate'>mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>" }
+     ],
+
+   });
+    // ','js_external':'https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/6/tinymce.min.js'}"
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1>TinyMCE Quick Start Guide</h1>
+  <form method="post">
+    <textarea id="tinymce">Hello, World!</textarea>
+  </form>
+</body>
+</html>
+

@@ -1,0 +1,280 @@
+/*
+
+
+
+
+
+
+@media print {
+    .print-only {
+        display: block;
+    }
+
+
+    #datatable_wrapper .row:first-child, #datatable_wrapper .row:last-child {
+        display:none;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #datatable thead,  #mytable thead, #datatable tfoot tr:first-child, #mytable tfoot tr:first-child  {
+        background-color : white;
+        color:black;
+        font-weight: bold;
+    }
+
+    .small-font-11 {
+        font-size:11px;
+    }
+
+
+    #kt_app_content_container {
+        position: absolute; !* Remove from normal flow to occupy the full page *!
+        top: 0;
+        left: 0;
+        width: 100vw;  !* Full viewport width *!
+        height: 100vh; !* Full viewport height *!
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+
+
+    .ajax-data-table{
+        width: 100% !important;
+        overflow: visible;
+        white-space: normal;
+        table-layout: auto;
+        border-collapse: collapse;
+        display: table-cell;
+        page-break-inside: avoid;
+    }
+
+
+
+    .ajax-data-table thead > tr > th{
+        padding: 4px!important;
+        font-size: 18px!important;
+        text-align: center!important;
+        font-weight: bold;
+        word-wrap: break-word; !* Break long words onto the next line *!
+        overflow-wrap: break-word; !* Ensure overflowed content breaks *!
+        width: fit-content;
+        min-width: 25px!important;
+
+    }
+
+    .dataTable td{
+        padding: 4px!important;
+        font-size: 18px!important;
+        text-align: left;
+        word-wrap: break-word; !* Break long words onto the next line *!
+        overflow-wrap: break-word; !* Ensure overflowed content breaks *!
+        width: fit-content;
+        min-width: 25px!important;
+    }
+
+
+
+
+    .ajax-data-table thead{
+        text-align: center!important;
+        font-weight: bold!important;
+    }
+
+
+
+
+    !* Ensure container takes full width on print *!
+    #kt_app_content_container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    .dataTables_wrapper .dataTables_sort_icon {
+        display: none !important;
+    }
+    th.sorting, th.sorting_asc, th.sorting_desc {
+        background: none !important; !* Remove background color if needed *!
+        color: black !important; !* Change text color if necessary *!
+        cursor: default; !* Change cursor to default *!
+        background-image: none;
+    }
+
+    .ajax-data-table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; !* Light gray for odd rows *!
+    }
+
+    .ajax-data-table tbody tr:nth-child(even) {
+        background-color: #ffffff; !* White for even rows *!
+    }
+
+    th.sorting::after,
+    th.sorting_asc::after,
+    th.sorting_desc::after {
+        display: none !important;
+    }
+    .text-start {
+        white-space: normal !important; !* Allows text to break to new lines *!
+        word-wrap: break-word !important; !* Breaks long words if necessary *!
+    }
+
+
+
+    .no-print, .pagination {
+        display: none !important; !* Hide pagination, search, info, etc. *!
+    }
+
+    .card {
+        box-shadow: none !important; !* Remove shadow *!
+        border: none !important;      !* Remove border *!
+    }
+}
+
+
+@media print and (orientation: portrait) {
+
+    .card {
+        box-shadow: none !important; !* Remove shadow *!
+        border: none !important;      !* Remove border *!
+    }
+
+    .print-only {
+        display: block;
+    }
+
+
+    #datatable_wrapper .row:first-child, #datatable_wrapper .row:last-child {
+        display:none;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #datatable thead,  #mytable thead, #datatable tfoot tr:first-child, #mytable tfoot tr:first-child  {
+        background-color : white;
+        color:black;
+        font-weight: bold;
+    }
+
+    .small-font-11 {
+        font-size:11px;
+    }
+
+
+    #kt_app_content_container {
+        position: absolute; !* Remove from normal flow to occupy the full page *!
+        top: 0;
+        left: 0;
+        width: 100vw;  !* Full viewport width *!
+        height: 100vh; !* Full viewport height *!
+        margin: 0;
+        padding: 0;
+        max-width: none;
+    }
+
+
+
+    .ajax-data-table .dataTables{
+        width: 100% !important;
+        overflow: visible;
+        white-space: normal;
+        table-layout: auto;
+        border-collapse: collapse;
+        display: table-cell;
+        page-break-inside: avoid;
+    }
+
+    .ajax-data-table thead > tr > th{
+        padding: 3px!important;
+        font-size: 16px!important;
+        text-align: center!important;
+        font-weight: bold;
+        word-wrap: break-word; !* Break long words onto the next line *!
+        overflow-wrap: break-word; !* Ensure overflowed content breaks *!
+        min-width: 25px!important;
+        max-width: 170px!important;
+        width: fit-content;
+
+    }
+
+    .dataTable td{
+        padding: 3px!important;
+        font-size: 16px!important;
+        text-align: left;
+        word-wrap: break-word; !* Break long words onto the next line *!
+        overflow-wrap: break-word; !* Ensure overflowed content breaks *!
+        min-width: 25px!important;
+        max-width: 170px!important;
+        width: fit-content;
+    }
+
+    .ajax-data-table thead{
+        text-align: center!important;
+        font-weight: bold!important;
+    }
+
+
+
+
+    !* Ensure container takes full width on print *!
+    #kt_app_content_container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    .dataTables_wrapper .dataTables_sort_icon {
+        display: none !important;
+    }
+    th.sorting, th.sorting_asc, th.sorting_desc {
+        background: none !important; !* Remove background color if needed *!
+        color: black !important; !* Change text color if necessary *!
+        cursor: default; !* Change cursor to default *!
+        background-image: none;
+    }
+
+    .ajax-data-table tbody tr:nth-child(odd) {
+        background-color: #f2f2f2; !* Light gray for odd rows *!
+    }
+
+    .ajax-data-table tbody tr:nth-child(even) {
+        background-color: #ffffff; !* White for even rows *!
+    }
+
+    th.sorting::after,
+    th.sorting_asc::after,
+    th.sorting_desc::after {
+        display: none !important;
+    }
+    .text-start {
+        white-space: normal !important; !* Allows text to break to new lines *!
+        word-wrap: break-word !important; !* Breaks long words if necessary *!
+    }
+
+
+
+    .no-print, .pagination {
+        display: none !important; !* Hide pagination, search, info, etc. *!
+    }
+}
+
+@media screen {
+    .print-only {
+        display: none;
+    }
+
+    .no-print {
+        display: block;
+    }
+}
+*/

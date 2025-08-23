@@ -1,0 +1,503 @@
+#kt_app_main {
+  margin-top: 0;
+}
+
+
+.form-control.form-control-solid {
+  background-color: var(--bs-gray-200);
+  border-color: var(--bs-gray-200);
+  color: #4b5675;
+  transition: color .2s ease;
+}
+
+.nav-tabs .nav-link {
+  color: #232020b3;
+}
+
+.general-tabs .card-header {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+}
+
+input.disabled,
+select.disabled {
+  pointer-events: none !important;
+  background: #fdf9f9 !important;
+}
+
+.alert-block.message {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alert-block.message .btn-close {
+  margin-right: 10px;
+}
+
+.attachment {
+  margin-left: 20px;
+}
+
+.form-control {
+  appearance: auto !important;
+}
+
+.btn>i {
+  font-size: inherit !important;
+}
+
+.select2-container .select2-selection--single {
+  height: 43px !important;
+}
+
+.select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  width: 20px;
+}
+
+.select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+.select2-results__options{
+  line-height: 26px;
+}
+
+.select2-results__option {
+  padding: 0.8rem 1.50rem !important;
+  font-size: 14px;
+}
+
+.dataTable  td {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dataTable .btn {
+    width: 75px !important;
+}
+
+/* Mouse Cursor Css */
+.mouse-move {
+  position: fixed;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  visibility: hidden;
+}
+
+.mouse-inner{
+  z-index: 10000001;
+}
+
+.mouse-inner, .mouse-inner.mouse-hover {
+  margin-left: -25px;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background-color: #6176f6;
+  opacity: 0.1;
+}
+
+[data-kt-app-layout=dark-sidebar] .app-sidebar {
+    background-color: #014aa6 !important;
+}
+
+@media (min-width: 992px) {
+    .app-sidebar-menu .menu>.menu-item>.menu-link>.menu-title {
+        font-size: 1.4rem !important;
+    }
+}
+
+[data-kt-app-layout=dark-sidebar] .app-sidebar .menu>.menu-item .menu-link.active {
+    background-color: #014AA4 !important;
+}
+
+@media (min-width: 992px) {
+    .app-sidebar-logo {
+        justify-content: center !important;
+    }
+}
+
+.btnColor {
+    background-color: #014294 !important;
+    color: white !important;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+
+.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+    padding: calc(0.775rem + 1px) calc(0.4rem + 1px);
+    font-size: 11px !important;
+}
+
+.job-card-checkbox {
+    background-color: #f6f6f6f6;
+    padding: 10px 10px;
+}
+
+.input-file {
+    width: 239px !important;
+}
+
+.login-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 100%;
+    padding: 30px;
+    background-color: #014294;
+    color: white !important;
+}
+
+.welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.company-logo {
+    width: 100%;
+}
+
+.add-item-details,
+.delete-item-details,
+.delete-employee,
+.add-employee,
+.add-supplier-details,
+.delete-supplier-details,
+.add-employee,
+.add-trip-details,
+.delete-trip-details,
+.add-group-store-in-items,
+.delete-group-store-in-items,
+.delete-gas-details,
+.add-gas-details,
+.add-sales-items,
+.delete-sales-items,
+.add-rfq-items,
+.delete-rfq-items,
+.delete-employee-staff {
+    float: right;
+    border: none;
+    padding: 13px 20px;
+    background-color: #007fc5;
+    color: white;
+    border-radius: 6px;
+}
+
+.add-item-details, .add-supplier-details {
+    background-color: #007fc5;
+}
+
+.delete-item-details,
+.delete-employee,
+.delete-supplier-details,
+.delete-trip-details,
+.delete-group-store-in-items,
+.delete-gas-details,
+.delete-sales-items,
+.delete-rfq-items,
+.delete-employee-staff {
+    background-color: red;
+}
+
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        min-width: 1140px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        min-width: 1320px !important;
+    }
+}
+
+.modal-footer .btn {
+    width: 80px;
+}
+
+.modal-footer .indicator-label {
+    font-size: 15px;
+}
+
+.page-header .btnColor {
+    min-width: 80px;
+}
+
+.btn:not(.btn-outline):not(.btn-dashed):not(.btn-bordered):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+    font-size: 13px !important;
+}
+
+.s-no {
+    font-size: 16px;
+    background-color: #f4f4f4cc;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.editable-select-container {
+  position: relative;
+}
+
+.editable-select-container option {
+    height: 30px;
+    line-height: 30px;
+}
+
+.editable-select-container .editOption{
+    position: absolute;
+    width: calc(100% - 30px);
+}
+
+.label-reports {
+    width:  40px;
+}
+
+.input-to-from-reports {
+    width:  110px;
+}
+
+.check-box-job-card {
+    color: #ff0000 !important;
+}
+
+/*@media print {
+    input,
+    textarea,
+    select {
+        display: block !important;  !* Ensures inputs are visible *!
+    }
+}
+
+@media print {
+    input:disabled {
+        background-color: #a52020;
+        color: #987676;
+    }
+}
+
+@media print {
+    input {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}*/
+
+input:disabled {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #ccc;
+}
+
+/* Disabled input fields */
+input:disabled,
+textarea:disabled,
+select:disabled,
+input[type="checkbox"]:disabled {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+    cursor: not-allowed !important;
+}
+
+/* Textareas */
+textarea:disabled {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+    cursor: not-allowed !important;
+}
+
+/* Select dropdowns */
+select:disabled {
+    background-color: #f0f0f0 !important;
+    color: black !important;
+    border: 1px solid #ccc !important;
+    cursor: not-allowed !important;
+}
+
+@media print {
+    input:disabled,
+    textarea:disabled,
+    select:disabled,
+    input[type="checkbox"]:disabled {
+        background-color: #f0f0f0 !important;
+        color: black !important;
+        border: 1px solid #8f8e96 !important;
+        cursor: not-allowed !important;
+    }
+}
+
+.btn-print-div {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-print {
+    padding: 7px 23px;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #007fc5;
+    color: white;
+}
+
+#togglePassword, #togglePasswordLogin {
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 69%);
+}
+
+#togglePasswordLogin {
+    transform: translate(-30%, 75%);
+}
+
+#DataTables_Table_0_length {
+    bottom: 50px !important;
+    position: absolute !important;
+    padding: 15px !important;
+    height: 20px !important;
+    left: 170px;
+}
+
+.buttons-html5 {
+    display: none;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaa;
+    border-radius: 6px !important;
+    background-color: transparent;
+    padding: 10px !important;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    min-width: 150px;
+    display: inline-block;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    margin-top: 10px !important;
+}
+
+@media (min-width: 992px) {
+    .h-width {
+        gap: 14.5rem !important;
+    }
+}
+
+label {
+    text-transform: capitalize;
+}
+
+.select-editable {
+    position: relative;
+    background-color: white;
+    border: solid #c7cbd473 1px;
+    width: 246px;
+    height: 44.23px;
+    border-radius: 6px;
+}
+.select-editable select {
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:14px;
+    border:none;
+    width: 95%;
+    margin:0;
+}
+.select-editable input {
+    position:absolute;
+    top:0;
+    left:0;
+    width:80%;
+    padding:6px 12px;
+    font-size:18px;
+    border:none;
+}
+.select-editable select:focus, .select-editable input:focus {
+    outline:none;
+}
+
+.h-job-screen p {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.h-job-screen h4 {
+    font-size: 32px;
+}
+
+.job-screen-padding {
+    padding: 4px !important;
+}
+
+.status-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    margin: 0 5px;
+}
+
+.status-button:hover {
+    transform: scale(1.05);
+}
+
+.all {
+    background-color: rgba(80, 78, 75, 0.35);
+}
+
+.pending {
+    background-color: #f39c12;
+}
+
+.received {
+    background-color: #3498db;
+}
+
+.testing {
+    background-color: #9b59b6;
+}
+
+.completed {
+    background-color: #2ecc71;
+}
+
+.cancelled {
+    background-color: #e74c3c;
+}
