@@ -10,7 +10,7 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'item_name'
+        'item_name', 'weight'
     ];
 
     public function category()

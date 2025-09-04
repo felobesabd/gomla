@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Unit extends Model
+class Representative extends Model
 {
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'unit_name',
-        'weight',
+        'name',
+        'phone',
+        'email',
+        'address',
     ];
 }

@@ -55,3 +55,102 @@ function createDatatable(columns, ajax_url, order_option = [0, 'desc']) {
 
     return $datatable;
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const unitSelect = document.getElementById('unit_id');
+    const numberInput = document.getElementById('number');
+    const qtyInput = document.getElementById('qty');
+
+    function calculateQuantity() {
+        const selectedUnit = unitSelect.options[unitSelect.selectedIndex];
+        const unitWeight = selectedUnit ? parseFloat(selectedUnit.getAttribute('data-weight')) : 0;
+        const number = parseFloat(numberInput.value) || 0;
+        const quantity = (unitWeight * number).toFixed(2);
+        qtyInput.value = quantity;
+    }
+
+    unitSelect.addEventListener('change', calculateQuantity);
+    numberInput.addEventListener('input', calculateQuantity);
+
+    // Initial calculation
+    calculateQuantity();
+});
+
+/* --------------------------------------------------------------- Reports ------------------------------------------------------ */
+// add new div
+function cloneAndReset(selector, select2Class, insertBeforeSelector, select2Placeholder, select2Width = '100%') {
+    var clonedElement = $(selector).first().clone();
+
+    // Remove previous Select2 containers and reset input fields
+    clonedElement.find('.select2-container').remove();
+    clonedElement.find('input, select, textarea').val('');
+    // clonedElement.find('.serial_no').val('');
+    clonedElement.find('.diesel-total-cost').text('');
+    clonedElement.find('.warranty_date_end').removeClass('hasDatepicker').removeAttr('id').removeClass('datepicker');
+    clonedElement.find('.warranty_date_end').datepicker({
+        dateFormat: "dd-mm-yy",
+        changeYear: true,
+        changeMonth: true,
+        weekStart: 0,
+        calendarWeeks: true,
+        autoclose: true,
+        todayHighlight: true,
+        rtl: true,
+        orientation: "auto"
+    });
+
+    // Reinitialize Select2 for the cloned select elements
+    clonedElement.find(select2Class).select2({
+        placeholder: select2Placeholder,
+        allowClear: true,
+        width: select2Width
+    });
+
+    // Insert the cloned element before the specified element
+    clonedElement.insertBefore(insertBeforeSelector);
+}
+
+// Function to handle delete logic for dynamic elements
+function handleDelete(deleteButtonSelector, containerSelector, inputFieldSelector) {
+    $(document).on('click', deleteButtonSelector, function () {
+        const index = $(this).data('index');
+        const id = $(this).data('id');
+        const itemsTracks = $(this).data('item_tracking');
+        const route = $(this).data('route');
+
+        if (itemsTracks) {
+            $.ajax({
+                url: route,
+                data: {},
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                    response(data);
+                }
+            });
+        }
+
+        if (index !== undefined && index !== null) {
+            let deleteIndexes = $(inputFieldSelector).val();
+            // deleteIndexes = deleteIndexes ? JSON.parse(deleteIndexes) : [];
+            deleteIndexes = JSON.parse(deleteIndexes);
+            deleteIndexes[index] = id;
+            $(inputFieldSelector).val(JSON.stringify(deleteIndexes));
+        }
+
+        // Remove the closest container element
+        $(this).closest(containerSelector).remove();
+
+        // Check if there are any remaining containers
+        if ($(containerSelector).length === 0) {
+            // If no containers are left, remove the #add-item-details element
+            $('#add-item-details').remove();
+        }
+    });
+}
+
+$('#add-sales-items').on('click', function () {
+    cloneAndReset('.report-items', '.report-items-select', '#add-sales-items', "Choose a part number");
+});
+
+handleDelete('.delete-sales-items', '.report-items', '.delete-rep-items-indexes');

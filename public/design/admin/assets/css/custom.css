@@ -90,6 +90,10 @@ select.disabled {
     width: 75px !important;
 }
 
+.btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon).btn-sm, .btn-group-sm > .btn:not(.btn-outline):not(.btn-dashed):not(.border-hover):not(.border-active):not(.btn-flush):not(.btn-icon) {
+    padding: 0 !important;
+}
+
 /* Mouse Cursor Css */
 .mouse-move {
   position: fixed;
@@ -181,27 +185,9 @@ select.disabled {
     width: 100%;
 }
 
-.add-item-details,
-.delete-item-details,
-.delete-employee,
-.add-employee,
-.add-supplier-details,
-.delete-supplier-details,
-.add-employee,
-.add-trip-details,
-.delete-trip-details,
-.add-group-store-in-items,
-.delete-group-store-in-items,
-.delete-gas-details,
-.add-gas-details,
-.add-sales-items,
-.delete-sales-items,
-.add-rfq-items,
-.delete-rfq-items,
-.delete-employee-staff {
-    float: right;
+.add-sales-items, .add-item-row {
+    float: left;
     border: none;
-    padding: 13px 20px;
     background-color: #007fc5;
     color: white;
     border-radius: 6px;
@@ -211,15 +197,7 @@ select.disabled {
     background-color: #007fc5;
 }
 
-.delete-item-details,
-.delete-employee,
-.delete-supplier-details,
-.delete-trip-details,
-.delete-group-store-in-items,
-.delete-gas-details,
-.delete-sales-items,
-.delete-rfq-items,
-.delete-employee-staff {
+.delete-sales-items {
     background-color: red;
 }
 

@@ -22,8 +22,8 @@ class UnitRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string'],
-            'unit_type' => ['required', 'string'],
+            'unit_name' => ['required', 'string'],
+            'weight' => ['required'],
         ];
     }
 }

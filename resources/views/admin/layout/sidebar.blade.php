@@ -66,6 +66,48 @@
                         </div>
                     </div>
 
+                    <!--begin::Menu Representatives-->
+                    <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                        <!--begin:Menu item-->
+                        <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                <span class="menu-icon">
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="menu-title">المندوبين</span>
+                                <span class="menu-arrow"></span>
+                            </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div class="menu-sub menu-sub-accordion">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link active" href="{{ route('admin.representatives.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">المندوبين</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                            </div>
+                            <!--end:Menu sub-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end::Menu Representatives-->
+
                    <!--begin::Menu Stores-->
                     <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
                         <!--begin:Menu item-->
@@ -108,12 +150,12 @@
                                     </a>--}}
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
-                                    {{--<a class="menu-link active" href="{{ route('admin.units.index') }}">
+                                    <a class="menu-link active" href="{{ route('admin.units.index') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">Units</span>
-                                    </a>--}}
+                                        <span class="menu-title">الوحدات</span>
+                                    </a>
                                     <!--end:Menu link-->
                                     <!--begin:Menu link-->
                                     <a class="menu-link active" href="{{ route('admin.items.index') }}">
@@ -149,7 +191,7 @@
                                         </svg>
                                     </span>
                                 </span>
-                                <span class="menu-title">المواردين</span>
+                                <span class="menu-title">الموردين</span>
                                 <span class="menu-arrow"></span>
                             </span>
                             <!--end:Menu link-->
@@ -162,15 +204,7 @@
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
-                                        <span class="menu-title">المواردين</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link active" href="{{ route('admin.suppliers.create') }}">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">اضافة مورد</span>
+                                        <span class="menu-title">الموردين</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -208,19 +242,11 @@
                                 <!--begin:Menu item-->
                                 <div class="menu-item">
                                     <!--begin:Menu link-->
-                                    <a class="menu-link active" href="#">
+                                    <a class="menu-link active" href="{{ route('admin.containers.index') }}">
                                         <span class="menu-bullet">
                                             <span class="bullet bullet-dot"></span>
                                         </span>
                                         <span class="menu-title">الحاويات</span>
-                                    </a>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu link-->
-                                    <a class="menu-link active" href="#">
-                                        <span class="menu-bullet">
-                                            <span class="bullet bullet-dot"></span>
-                                        </span>
-                                        <span class="menu-title">اضافة الحاوية</span>
                                     </a>
                                     <!--end:Menu link-->
                                 </div>
@@ -231,6 +257,90 @@
                         <!--end:Menu item-->
                     </div>
                     <!--end::Menu Containers-->
+
+                    <!--begin::Menu Delivery-->
+                    <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                        <!--begin:Menu item-->
+                        <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                <span class="menu-icon">
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="menu-title">تسليم المندوبين</span>
+                                <span class="menu-arrow"></span>
+                            </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div class="menu-sub menu-sub-accordion">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link active" href="{{ route('admin.delivery.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">تسليم المندوبين</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                            </div>
+                            <!--end:Menu sub-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end::Menu Delivery-->
+
+                    <!--begin::Menu Direct Sale-->
+                    <div class="menu menu-column menu-rounded menu-sub-indention fw-semibold fs-6" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                        <!--begin:Menu item-->
+                        <div data-kt-menu-trigger="click" class="menu-item here menu-accordion">
+                            <!--begin:Menu link-->
+                            <span class="menu-link">
+                                <span class="menu-icon">
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                            <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="menu-title">المبيعات المباشرة</span>
+                                <span class="menu-arrow"></span>
+                            </span>
+                            <!--end:Menu link-->
+                            <!--begin:Menu sub-->
+                            <div class="menu-sub menu-sub-accordion">
+                                <!--begin:Menu item-->
+                                <div class="menu-item">
+                                    <!--begin:Menu link-->
+                                    <a class="menu-link active" href="{{ route('admin.direct_sales.index') }}">
+                                        <span class="menu-bullet">
+                                            <span class="bullet bullet-dot"></span>
+                                        </span>
+                                        <span class="menu-title">المبيعات المباشرة</span>
+                                    </a>
+                                    <!--end:Menu link-->
+                                </div>
+                                <!--end:Menu item-->
+                            </div>
+                            <!--end:Menu sub-->
+                        </div>
+                        <!--end:Menu item-->
+                    </div>
+                    <!--end::Menu Direct Sale-->
                 </div>
                 <!--end::Scroll wrapper-->
             </div>
